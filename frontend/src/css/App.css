@@ -1,6 +1,6 @@
 /* styling */
 
-header{
+header {
   font-family: 'Times New Roman', Times, serif;
 }
 
@@ -11,7 +11,7 @@ header{
 }
 
 .sidebar {
-  background-color: hsl(177,45%,92%);
+  background-color: hsl(177, 45%, 92%);
   color: var(--black-font);
   white-space: nowrap;
   line-height: 1.6em;
@@ -23,12 +23,12 @@ header{
 }
 
 .main_section h2 {
-    color: var(--forest-green);
+  color: var(--forest-green);
 }
 
 /* layout */
 
-.header_container{ 
+.header_container {
   width: 80%;
   margin: 0 auto;
   padding: 1rem;
@@ -59,4 +59,38 @@ header{
 
 section {
   padding: 1rem 0;
+}
+
+
+@media print {
+
+  pre {
+    white-space: pre-wrap;
+  }
+
+  .header_container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .sidebar {
+    display: block;
+    width: 32%;
+    font-size: var(--aside-font-size);
+  }
+
+  .sidebar > * {
+    margin-bottom: 3rem;
+  }
+  
+  .sidebar {
+    padding: 2rem 1rem;
+    white-space: pre-wrap;
+  }
+  
+  
 }

@@ -9,7 +9,7 @@ import ProjectSection from './ProjectSection'
 import { person_api, employment_api, skills_api, project_api } from "./wendy_api"
 
 function App() {
-  const { name, address, phone_number, email, education, role } = person_api
+  const { name, address_one, address_two, phone_number, email, education, role } = person_api
   const { college_name, degree } = education
   const { major, minor, graduation } = degree
 
@@ -25,7 +25,8 @@ function App() {
         <aside className='sidebar'>
             <Contact
               name={name}
-              address={address}
+              address_one={address_one}
+              address_two={address_two}
               phone_number={phone_number}
               email={email}
             />

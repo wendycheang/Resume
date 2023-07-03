@@ -1,0 +1,10 @@
+.school {
+    font-weight: 500;
+}
+
+@media print {
+    .education {
+        font-size: .65rem;
+    }
+
+}

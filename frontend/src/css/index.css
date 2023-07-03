@@ -34,7 +34,7 @@ h1 {
 }
 
 h2 {
-  margin: 0 0 1rem 0;
+  margin: 0 0 .5rem 0;
   font-size: var(--sub-header-font-size);
   font-weight: 700;
 }
@@ -64,3 +64,27 @@ a {
 
 
 
+@media print {
+
+  :root {    
+    --header-font-size: 2rem;
+    --sub-header-font-size: 1.25rem;
+    --sub-header-font-size-two: 1.15rem;
+    --main-font-size: 1rem;
+    --aside-font-size: .7rem;
+  }
+  
+  body {
+  -webkit-print-color-adjust:exact !important;
+  print-color-adjust:exact !important; 
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .main_section {
+    padding-right: 1rem;
+  }
+}

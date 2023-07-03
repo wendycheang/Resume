@@ -1,13 +1,14 @@
 export const person_api = {
     name: "Wendy Cheang",
-    address: "58 Sullivan St., Charlestown, MA 02129",
+    address_one: "58 Sullivan St.,",
+    address_two: "Charlestown, MA 02129",
     phone_number: "857-242-8535",
     email: "wendy.cheang.trinity@gmail.com",
     role: "Software Developer",
     education: {
         college_name: "Massachusetts Institute of Technology",
         degree: {
-            major: "Bachelor of Science in Computer Science",
+            major: "Bachelor in Computer Science",
             minor: "Minor in History",
             graduation: "September 2013"
         }

@@ -25,3 +25,14 @@
     width: auto;
     height: 1.3em;
 }
+
+
+@media print {
+    .newline {
+        display: block;
+    }
+
+    .contact > * {
+        margin: .5em 0;
+    }
+}

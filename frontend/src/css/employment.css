@@ -20,3 +20,12 @@
     display: flex;
     justify-content: space-between;
 }
+
+
+@media print {
+    .employment {
+        padding: 1rem 0;
+        list-style-type: none;
+    }
+
+}

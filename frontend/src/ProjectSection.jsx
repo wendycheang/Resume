@@ -1,5 +1,3 @@
-
-
 import "./css/project.css"
 
 const ProjectSection = ({ projects }) => {
