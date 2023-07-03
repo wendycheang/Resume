@@ -25,9 +25,11 @@ export const employment_api = [
         position: "Staff Software Engineer",            
         projects: [
             "Set up Team City as a CI too",
-            "Built Microservices using GRPC and Kotlin",
-            "Built features for a chemist selection tool in React",
-            "Helped build a Python data analytics platform"
+            "Built Microservices and APIs using GRPC and Kotlin",
+            "Introduced Docker and dockerized tech stack",
+            "Researched and Designed AWS tech stack",
+            "Collaborated in designing/building a chemist selection tool in React and integration with Dash python library",
+            "Helped build a Python data analytics platform pipeline"
         ]
     
     },
@@ -63,7 +65,7 @@ export const employment_api = [
 ]
 
 export const skills_api = [
-    "Javascript", "Java", "Python", "Confluence", "Jira", "Docker"
+    "Javascript", "Java", "Python", "Typescipt", "Docker", "MySql", "Mongo", "Confluence", "Jira"
 ]
 
 export const project_api = [

@@ -10,7 +10,7 @@
 .contact {
     display: flex;
     flex-direction: column;
-    gap: .5em;
+    gap: 1em;
 }
 
 /* layout */ 

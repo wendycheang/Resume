@@ -9,7 +9,6 @@
     color: var(--forest-green);
 }
 
-
 /* layout */
 .employment {
     padding: 2rem 0;
@@ -19,6 +18,10 @@
 .subtitle {
     display: flex;
     justify-content: space-between;
+}
+
+.employment_info li {
+    font-size: var(--bullet-font-size);
 }
 
 

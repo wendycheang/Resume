@@ -9,7 +9,7 @@ const EmploymentSection = ({ company, employmentDate, position, projects, id }) 
                 <p>{company}</p>
                 <p>{employmentDate}</p>
             </div>
-            <ul>
+            <ul class="employment_info">
                 {projects.map(
                     (project, index) =>
                         <li key={`project_${id}_${index}`}>
