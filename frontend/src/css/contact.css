@@ -1,0 +1,27 @@
+/* styling */
+.home-logo path, .phone-logo path{
+    stroke: var(--forest-green)
+}
+
+.email-logo {
+    fill: var(--forest-green)
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+/* layout */ 
+
+.contact__info {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+
+.home-logo, .email-logo, .phone-logo {
+    width: auto;
+    height: 1.3em;
+}

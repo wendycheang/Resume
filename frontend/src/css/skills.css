@@ -1,0 +1,7 @@
+.skills {
+    width: 80%;
+    display: grid;
+    grid-template: repeat(3,1fr) / repeat(2,1fr);
+    grid-auto-flow: column;
+    row-gap: .75em;
+}

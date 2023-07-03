@@ -1,0 +1,65 @@
+/* styling */
+
+header{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.header_container {
+  text-align: center;
+  color: var(--light-green);
+  background-color: var(--forest-green);
+}
+
+.sidebar {
+  background-color: hsl(177,45%,92%);
+  color: var(--black-font);
+  white-space: nowrap;
+  line-height: 1.6em;
+}
+
+.sidebar__title {
+  color: var(--forest-green);
+  border-bottom: 1px solid var(--forest-green);
+}
+
+.employment_section h2 {
+    color: var(--forest-green);
+}
+
+
+
+/* layout */
+
+.header_container{ 
+  width: 50%;
+  margin: 0 auto 3rem auto;
+  padding: 1rem;
+}
+
+.resume {
+  margin: 0 auto;
+  display: flex;
+  gap: 2em;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.sidebar {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar__title {
+  width: 80%;
+  padding: .5em 0;
+}
+
+section {
+  padding: 1rem 0;
+
+}

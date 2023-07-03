@@ -1,0 +1,22 @@
+/* styling */
+
+.employment {
+    list-style-type: none;
+    border-bottom: 1px solid var(--grey);
+}
+
+.employment h2,h3 {
+    color: var(--forest-green);
+}
+
+
+/* layout */
+.employment {
+    padding: 2rem 0;
+    list-style-type: none;
+}
+
+.subtitle {
+    display: flex;
+    justify-content: space-between;
+}
