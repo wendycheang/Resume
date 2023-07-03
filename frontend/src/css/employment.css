@@ -20,7 +20,7 @@
     justify-content: space-between;
 }
 
-.employment_info li {
+.employment_info li::before{
     font-size: var(--bullet-font-size);
 }
 
