@@ -4,9 +4,9 @@ import Contact from './Contact'
 import Education from './Education'
 import Skills from './Skills'
 import EmploymentSection from './EmploymentSection'
+import ProjectSection from './ProjectSection'
 
-
-import { person_api, employment_api, skills_api } from "./wendy_api"
+import { person_api, employment_api, skills_api, project_api } from "./wendy_api"
 
 function App() {
   const { name, address, phone_number, email, education, role } = person_api
@@ -14,14 +14,14 @@ function App() {
   const { major, minor, graduation } = degree
 
   return (
-    <div>
+    <div className="resume">
       <header>
         <div className='header_container'>
           <h1>{name}</h1>
           <h2>{role}</h2>
         </div>
       </header>
-      <main className="resume container">
+      <main className="body container">
         <aside className='sidebar'>
             <Contact
               name={name}
@@ -43,6 +43,7 @@ function App() {
             />
         </aside>
 
+        <div className='main_section'>
         <section className='employment_section'>
           <h2>Employment Highlights</h2>
           {employment_api.map((
@@ -57,6 +58,13 @@ function App() {
             />
           )}
         </section>
+
+        <section className='project_section'>
+          <h2>Projects</h2>
+          <ProjectSection projects={project_api}/>
+        </section>
+
+        </div>
       </main>
     </div>
   )

@@ -64,3 +64,10 @@ export const employment_api = [
 export const skills_api = [
     "Javascript", "Java", "Python", "Confluence", "Jira", "Docker"
 ]
+
+export const project_api = [
+    {   id: 21123,
+        name: "Resume",
+        link:"https://github.com/wendycheang/Resume"
+    }
+]
