@@ -24,12 +24,14 @@ export const employment_api = [
         duration: "Summer 2020 - Summer 2023",
         position: "Staff Software Engineer",            
         projects: [
-            "Set up Team City as a CI too",
-            "Built Microservices and APIs using GRPC and Kotlin",
-            "Introduced Docker and dockerized tech stack",
-            "Researched and Designed AWS tech stack",
-            "Collaborated in designing/building a chemist selection tool in React and integration with Dash python library",
-            "Helped build a Python data analytics platform pipeline"
+            "Led a Project to set up Team City as a Continous Integration tool to implement more efficent coding practices",
+            "Primary Developer for Microservices and APIs using GRPC and Kotlin. Developed backend features for molecule selection and display",
+            "Developed Javascript Vue Frontend PoC for Molecule Selection Tool.",
+            "Introduced Docker and Standarized Docker tech stack to improve code efficiency for the team.",
+            "Researched and Designed AWS tech stack. Led research and design in Elasticsearch, AWS EKS, Pulumi along with Dev Ops team.",
+            "Designed/built a chemist selection tool in React. Integrated the tool with Dash python library and Java API Backend.",
+            "Converted Jupyter Notebooks into a Python data analytics platform pipeline. Developed the platform in concert with data analytics team.", 
+            "Mentored junior developers in Python, Java and career development"
         ]
     
     },
@@ -42,7 +44,7 @@ export const employment_api = [
         projects: [
                 "Backend Software Engineer",
                 "Led Java/Backbone project to speed up dashboard loading",
-                "Collaborate on setting up Docker containers and microservices",
+                "Set up Docker containers and microservices",
                 "Frontend Software Developer",
                 "Designed and built Mongo queries using the Javascript",
                 "Built microsites, Matomo reporting and widgets in Backbone/Javascript",
@@ -58,7 +60,7 @@ export const employment_api = [
         projects: [
                 "Created new APIs and features for a data analytics platform",
                 "Organized, optimized and built MySQL database data structures and queries",    
-                "Led a project to design and create a framework for Excel file generation",
+                "Led a project to design and create a framework for Excel file generation as a customer feature request.",
                 "Designed, and implemented a framework for asynchronous job processing"
             ]
     },

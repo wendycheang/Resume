@@ -86,10 +86,14 @@ section {
   .sidebar > * {
     margin-bottom: 3rem;
   }
-  
+
   .sidebar {
     padding: 2rem 1rem;
     white-space: pre-wrap;
+  }
+
+  .main_section {
+    margin-right: 1rem;
   }
   
   
