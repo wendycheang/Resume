@@ -46,7 +46,6 @@ function App() {
 
         <div className='main_section'>
         <section className='employment_section'>
-          <h2>Employment Highlights</h2>
           {employment_api.map((
             { company, duration, position, projects, id
             }) => <EmploymentSection

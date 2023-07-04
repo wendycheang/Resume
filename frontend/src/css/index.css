@@ -14,7 +14,9 @@
   
   --header-font-size: 4rem;
   --sub-header-font-size: 1.75rem;
-  --sub-header-font-size-two: 1.25rem;
+  --sub-header-font-size-two: 1.50rem;
+  --sub-header-font-size-three: 1.35rem;
+  --aside-font-size: 1.25rem;
   --main-font-size: 1.25rem;
   --bullet-font-size: .5rem;
 }
@@ -42,7 +44,7 @@ h2 {
 
 h3 {
   margin: 0;
-  font-size: var(--main-font-size);
+  font-size: var(--sub-header-font-size-two);
   font-weight: 700;
 }
 
