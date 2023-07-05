@@ -23,7 +23,7 @@ The whole project will be dockerized for easy setup.
 
 ### Screenshot
 
-![Desktop](./images/desktop.png)
+![Desktop](./assets/wendy_resume.png)
 
 ### Links
 

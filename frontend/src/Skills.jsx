@@ -10,7 +10,7 @@ const Skills = ({ skills }) => {
             {skills.map(({category, skills, id}) => (
                 <div key={id} className='skill_category'>
                     <h4>{category}</h4>
-                    {skills.map((skill, i) => (
+                    {skills.map(({skill, rating}, i) => (
                         <div>
                             <p key={`skills_${id}_${i}`}>{skill}</p>
                         </div>

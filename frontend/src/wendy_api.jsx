@@ -82,17 +82,33 @@ export const employment_api = [
 export const skills_api = [{
     id: nanoid(),
     category: "Programming Languages",
-    skills: ["Java","Javascript", "Typescript", "React", "Python", "Vue", "Kotlin"]
+    skills: [
+        {skill: "Java", rating: 4},
+        {skill: "Javascript", rating: 3},
+        {skill: "Typescript", rating: 3},
+        {skill: "React", rating: 2},
+        {skill: "Python", rating: 2},
+        {skill: "Vue", rating: 1},
+        {skill: "Kotlin", rating: 1},
+    ]
 },
 {
     id: nanoid(),
     category: "Agile and Workflow",
-    skills: ["Confluence", "Jira"]
+    skills: [
+        {skill: "Confluence", rating: 3},
+        {skill: "Jira", rating: 3}
+    ]
 }, 
 {
     id: nanoid(),
     category: "Other",
-    skills: ["Mongo", "MySql", "Docker", "AWS"]
+    skills: [
+        {skill: "Mongo", rating: 3},
+        {skill: "MySql", rating: 3},
+        {skill: "Docker", rating: 4},
+        {skill: "AWS", rating: 2}
+    ]
 }
 ]
 
