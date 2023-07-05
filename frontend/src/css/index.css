@@ -9,16 +9,18 @@
 
   --grey: rgb(199, 200, 204);
   --black-font: hsl(0, 0%, 0%);
-  --forest-green: hsl(173,28%,39%);
-  --light-green: hsl(177,45%,92%);
+  --forest-green: hsl(173, 28%, 39%);
+  --light-green: hsl(177, 46%, 92%);
   
   --header-font-size: 4rem;
   --sub-header-font-size: 1.75rem;
   --sub-header-font-size-two: 1.50rem;
   --sub-header-font-size-three: 1.35rem;
-  --aside-font-size: 1.25rem;
+  --aside-font-size: 1rem; 
   --main-font-size: 1.25rem;
   --bullet-font-size: .5rem;
+
+  --pages-size: 200vh;
 }
 
 body {
@@ -50,7 +52,7 @@ h3 {
 
 h4 {
   margin: 0;
-  font-size: var(--main-font-size);
+  font-size: var(--sub-header-font-size-three);
   font-weight: 500;
 }
 
@@ -73,6 +75,7 @@ a {
     --header-font-size: 2rem;
     --sub-header-font-size: 1.25rem;
     --sub-header-font-size-two: 1.15rem;
+    --sub-header-font-size-three: 1rem;
     --main-font-size: 1rem;
     --aside-font-size: .7rem;
   }

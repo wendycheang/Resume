@@ -1,4 +1,10 @@
-.project_name{ 
-    color: var(--forest-green);
-    font-weight: 500;
+.projects a{
+    display: block;
+}
+
+.qr_code {
+    display: block;
+    width: 35%;
+    max-width: 300px;
+    margin: 0 auto;
 }

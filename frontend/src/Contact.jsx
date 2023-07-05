@@ -8,11 +8,13 @@ import './css/contact.css'
 const Contact = ({ address_one, address_two, phone_number, email }) => {
     return (
         <div>
-            <h2 className="sidebar__title">Contact</h2>
             <div className="contact">
                 <div className="contact__info">
                     <HomeLogo />
-                    <p><span>{address_one}</span><span className='newline'>{address_two}</span></p>
+                    <div>
+                    <p>{address_one}</p>
+                    <p>{address_two}</p>
+                    </div>
                 </div>
                 <div className="contact__info">
                     <PhoneLogo />

@@ -5,9 +5,12 @@ header {
 }
 
 .header_container {
-  text-align: center;
   color: var(--light-green);
   background-color: var(--forest-green);
+}
+
+.name {
+  text-align: center;
 }
 
 .sidebar {
@@ -22,7 +25,12 @@ header {
   border-bottom: 1px solid var(--forest-green);
 }
 
-.main_section h2 {
+.sidebar h4 {
+  color: var(--forest-green);
+  font-weight: 500;
+}
+
+.main_section h2, h4 {
   color: var(--forest-green);
 }
 
@@ -31,7 +39,15 @@ header {
 .header_container {
   width: 80%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1rem 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.name {
+  flex-grow: 1;
 }
 
 .body {
@@ -39,6 +55,7 @@ header {
   display: flex;
   gap: 2em;
 }
+
 
 .container {
   width: 80%;
@@ -49,7 +66,7 @@ header {
   padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 3rem;
 }
 
 .sidebar__title {
@@ -79,7 +96,14 @@ section {
 
   .sidebar {
     display: block;
-    width: 32%;
+    width: 35%;
+    font-size: var(--aside-font-size);
+    height: calc(var(--pages-size) - 9rem);
+    page-break-after: always;
+
+  }
+
+  .sidebar h4 {
     font-size: var(--aside-font-size);
   }
 

@@ -18,17 +18,29 @@
 .subtitle {
     display: flex;
     justify-content: space-between;
+
+    margin-bottom: 1em;
 }
+
+.employment li{
+    margin: .25em;
+}
+
 
 .employment_info li::before{
     font-size: var(--bullet-font-size);
 }
 
+.employment_info__title{
+    margin-bottom: .3rem;
+}
 
 @media print {
     .employment {
         padding: 1rem 0;
         list-style-type: none;
+        
+        break-after: auto;
     }
 
 }

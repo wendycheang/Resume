@@ -1,6 +1,6 @@
 import "./css/employment.css"
 
-const EmploymentSection = ({ company, employmentDate, position, projects, id }) => {
+const EmploymentSection = ({ company, employmentDate, position, roles, id }) => {
 
     return (
         <div className="employment">
@@ -9,12 +9,15 @@ const EmploymentSection = ({ company, employmentDate, position, projects, id }) 
                 <p>{company}</p>
                 <p>{employmentDate}</p>
             </div>
-            <ul class="employment_info">
-                {projects.map(
-                    (project, index) =>
-                        <li key={`project_${id}_${index}`}>
-                            {project}</li>)}
-            </ul>
+            {roles.map(({title, projects, id}) => (
+                <ul key={id} className="employment_info" >
+                    {title && <h4 className="employment_info__title">{title}</h4>}
+                    {projects.map(
+                        (project, index) =>
+                            <li key={`project_${id}_${index}`}>
+                                {project}</li>)}
+                </ul>
+            ))}
         </div>
     )
 }

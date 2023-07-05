@@ -1,16 +1,16 @@
 /* styling */
 .home-logo path, .phone-logo path{
-    stroke: var(--forest-green)
+    stroke: var(--light-green)
 }
 
 .email-logo {
-    fill: var(--forest-green)
+    fill: var(--light-green)
 }
 
 .contact {
     display: flex;
     flex-direction: column;
-    gap: .5em;
+    gap: .25em;
 }
 
 /* layout */ 
@@ -30,9 +30,5 @@
 @media print {
     .newline {
         display: block;
-    }
-
-    .contact > * {
- 
     }
 }
