@@ -48,7 +48,7 @@ function App() {
         </aside>
 
         <div className='main_section'>
-          <section className='employment_section'>
+          <section>
             {employment_api.map((
               { company, duration, position, roles, id
               }) => <EmploymentSection

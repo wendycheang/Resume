@@ -10,7 +10,7 @@ const Project = ({ projects }) => {
                 {projects.map(({ id, name, link }) => (
                     <div key={`project_${id}`}>
                         <h4>{name}</h4>
-                        <a href={link}>{link}</a>
+                        <a className="project__link" href={link}>{link}</a>
                         <img className="qr_code" src={ResumeQR} alt="link"></img>
                     </div>
                 ))

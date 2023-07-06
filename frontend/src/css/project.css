@@ -1,4 +1,8 @@
-.projects a{
+.projects h4 {
+    font-size: var(--sub-header-font-size-three);
+}
+
+.project__link {
     display: block;
 }
 
@@ -7,4 +11,15 @@
     width: 35%;
     max-width: 300px;
     margin: 0 auto;
+}
+
+@media print {
+    .project__link {
+        display: none;
+    }
+
+    .qr_code {
+        margin: .5rem 0;
+    }
+
 }

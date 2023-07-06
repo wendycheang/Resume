@@ -56,7 +56,6 @@ header {
   gap: 2em;
 }
 
-
 .container {
   width: 80%;
   margin: 0 auto;
@@ -73,11 +72,6 @@ header {
   width: 80%;
   padding: .5em 0;
 }
-
-section {
-  padding: 1rem 0;
-}
-
 
 @media print {
 
@@ -96,11 +90,9 @@ section {
 
   .sidebar {
     display: block;
-    width: 35%;
+    width: 40%;
     font-size: var(--aside-font-size);
     height: calc(var(--pages-size) - 9rem);
-    page-break-after: always;
-
   }
 
   .sidebar h4 {
@@ -119,6 +111,5 @@ section {
   .main_section {
     margin-right: 1rem;
   }
-  
   
 }
