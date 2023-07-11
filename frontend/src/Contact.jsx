@@ -5,20 +5,20 @@ import { ReactComponent as PhoneLogo } from './assets/phone-logo.svg'
 
 import './css/contact.css'
 
-const Contact = ({ address_one, address_two, phone_number, email }) => {
+const Contact = ({ addressOne, addressTwo, phoneNumber, email }) => {
     return (
         <div>
             <div className="contact">
                 <div className="contact__info">
                     <HomeLogo />
                     <div>
-                    <p>{address_one}</p>
-                    <p>{address_two}</p>
+                    <p>{addressOne}</p>
+                    <p>{addressTwo}</p>
                     </div>
                 </div>
                 <div className="contact__info">
                     <PhoneLogo />
-                    <p>{phone_number}</p>
+                    <p>{phoneNumber}</p>
                 </div>
                 <div className="contact__info">
                     <EmailLogo />

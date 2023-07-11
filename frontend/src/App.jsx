@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './css/App.css'
 import Contact from './Contact'
 import Education from './Education'
@@ -6,11 +6,82 @@ import Skills from './Skills'
 import EmploymentSection from './EmploymentSection'
 import Project from './Project'
 
-import { person_api, employment_api, skills_api, project_api } from "./wendy_api"
+const BASE_API_URL = import.meta.env.VITE_BASE_API_URL
 
 function App() {
-  const { name, address_one, address_two, phone_number, email, education, role } = person_api
-  const { college_name, degree } = education
+
+  const [person, setPerson] = useState({
+    name: "",
+    addressOne: "",
+    addressTwo: "",
+    phoneNumber: "",
+    email: "",
+    role: "",
+    education: {
+      collegeName: "",
+      degree: {
+        major: "",
+        minor: "",
+        graduation: ""
+      }
+    }
+  })
+
+
+  const [skills, setSkills] = useState([])
+  const [employment, setEmployment] = useState([])
+  const [projects, setProjects] = useState([])
+
+
+  useEffect(() => {
+    const getAPI = async () => {
+      const name = "Wendy Cheang"
+      const response = await fetch(`${BASE_API_URL}/person/${name}`, {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        }
+      });
+      const data = await response.json();
+      setPerson(data)
+    }
+
+    getAPI();
+  }, [])
+
+  
+  useEffect(() => {
+    const getAPI = async () => {
+      const response = await fetch(`${BASE_API_URL}/skills`);
+      const data = await response.json();
+      setSkills(data)
+    }
+
+    getAPI();
+  }, [])
+
+  useEffect(() => {
+    const getAPI = async () => {
+      const response = await fetch(`${BASE_API_URL}/employment`);
+      const data = await response.json();
+      setEmployment(data)
+    }
+
+    getAPI();
+  }, [])
+
+  useEffect(() => {
+    const getAPI = async () => {
+      const response = await fetch(`${BASE_API_URL}/projects`);
+      const data = await response.json();
+      setProjects(data)
+    }
+
+    getAPI();
+  }, [])
+
+
+  const { name, addressOne, addressTwo, phoneNumber, email, role } = person
+  const { collegeName, degree } = person.education
   const { major, minor, graduation } = degree
 
   return (
@@ -18,14 +89,14 @@ function App() {
       <header>
         <div className='header_container'>
           <div className='name'>
-              <h1>{name}</h1>
-              <h2>{role}</h2>
+            <h1>{name}</h1>
+            <h2>{role}</h2>
           </div>
           <Contact
             name={name}
-            address_one={address_one}
-            address_two={address_two}
-            phone_number={phone_number}
+            addressOne={addressOne}
+            addressTwo={addressTwo}
+            phoneNumber={phoneNumber}
             email={email}
           />
         </div>
@@ -33,7 +104,7 @@ function App() {
       <main className="body container">
         <aside className='sidebar'>
           <Education
-            college_name={college_name}
+            collegeName={collegeName}
             degree={degree}
             major={major}
             minor={minor}
@@ -43,13 +114,13 @@ function App() {
           <Project projects={project_api} />
 
           <Skills
-            skills={skills_api}
+            skills={skills}
           />
         </aside>
 
         <div className='main_section'>
           <section>
-            {employment_api.map((
+            {employment.map((
               { company, duration, position, roles, id
               }) => <EmploymentSection
                 key={id}
