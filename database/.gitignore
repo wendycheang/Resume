@@ -1,3 +1,1 @@
-# Ignore everything in data because it's not necessary
-data/*
-.env
+data
