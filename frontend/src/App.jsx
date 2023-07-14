@@ -111,7 +111,7 @@ function App() {
             graduation={graduation}
           />
 
-          <Project projects={project_api} />
+          <Project projects={projects} />
 
           <Skills
             skills={skills}
