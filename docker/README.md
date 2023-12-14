@@ -18,13 +18,18 @@ To start the docker container
 To stop the docker container
 `docker compose down -d`
 
+To rebuild the containers after a code change 
+`docker compose up --build`
+
 ### Enviroment Variables
 
-You need 2 environment variables to get the containers working. You can set the variable in a .env file in this folder or you can set it via command line variables.
+You need 4 environment variables to get the containers working. You can set the variable in a .env file in this folder or you can set it via command line variables.
 
 ```
 VITE_BASE_API_URL=http://localhost:8080
 DATABASE_URL=mongodb://<username>:<password>@mongo:27017/?authSource=admin
+MONGO_INITDB_ROOT_PASSWORD=<password>
+MONGO_INITDB_ROOT_USERNAME=<username>
 ```
 
 ### Mongo 
@@ -32,7 +37,7 @@ DATABASE_URL=mongodb://<username>:<password>@mongo:27017/?authSource=admin
 When running mongo in a docker container for the first time (ie building the image), you must run to load the information 
 Once that command is run once, there is no need to run the command again since the data will live in the `../database/data` folder.
 
-`docker exec -i <container-id> sh -c 'mongorestore --username <username> --password <password> --authenticationDatabase admin --verbose /dump`
+`docker exec -i mongo sh -c 'mongorestore --username <username> --password <password> --authenticationDatabase admin --verbose /db-dump`
 
 This command also lives in `../database/dump/import.sh` (though it needs modifying)
 
@@ -51,3 +56,5 @@ username and password you picked
 ### Networking
 
 The backend and mongo database share a network name `shared-network` and talk to each other. The frontend does not since there is no reason to. 
+
+

@@ -21,6 +21,9 @@ public class EmploymentController {
     // tag::get-aggregate-root[]
     @GetMapping("/employment")
     List<Employment> all() {
-        return repository.findAll();
+        List<Employment> employmentList = repository.findAll();
+        employmentList.sort((o1, o2) -> (Integer.valueOf(o1.getSort()).compareTo(o2.getSort())));
+        System.out.println(employmentList);
+        return employmentList;
     }
 }
