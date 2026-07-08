@@ -64,9 +64,8 @@ function App() {
             ...employment,
             position: e.target.value
           })} />
-
-        <RoleSection employment={employment} setEmployment={setEmployment}/>
         </div>
+        <RoleSection employment={employment} setEmployment={setEmployment}/>
         <button type="submit" onClick={(event) =>
           handleSubmit(event, employment)
         }>Submit</button>

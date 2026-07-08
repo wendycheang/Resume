@@ -4,7 +4,6 @@ import './css/RoleSection.css'
 
 const RoleSection = ({ employment, setEmployment }) => {
 
-    const [entry, setEntry] = useState("")
     const [editID, setEditID] = useState(-1)
 
     const [currentRole, setCurrentRole] = useState({
@@ -16,25 +15,21 @@ const RoleSection = ({ employment, setEmployment }) => {
     const updateProjects = (e) => {
         e.preventDefault()
 
-        const newProjects = JSON.parse(JSON.stringify(currentRole.projects))
-        newProjects[currentRole.projects.length-1] = currentProject
         setCurrentRole({
             ...currentRole,
-            projects: newProjects
+            projects: [...currentRole.projects, currentProject]
         })
         setCurrentProject("")
     }
 
     const addRole = (e, entry) => {
-        if (e.key === 'Enter') {
-            e.preventDefault()
-            setEmployment({
-                ...employment,
-                roles: [...employment.roles, entry]
-            })
-            setEntry("")
-            setEditID(-1)
-        }
+        e.preventDefault()
+        setEmployment({
+            ...employment,
+            roles: [...employment.roles, currentRole]
+        })
+    //    setEntry("")
+   //     setEdit(-1)
     }
 
 
@@ -61,46 +56,47 @@ const RoleSection = ({ employment, setEmployment }) => {
 
     return (
         <>
-            <label htmlFor="roles">Roles:</label>
+            <div htmlFor="roles">Roles:</div>
             <div></div>
             <div>
-            <div className="role-section">
-                <label >Title:</label>
-                <input
-                    type="text"
-                    id="role-title"
-                    name="role-title"
-                    value={currentRole.title}
-                    onChange={(e) => {
-                        e.preventDefault()
-                        setCurrentRole({
-                            ...currentRole,
-                            title: e.target.value
-                        })
-                    }} />
+                <div className="role-section">
+                    <div>Title:</div>
+                    <input
+                        type="text"
+                        id="role-title"
+                        name="role-title"
+                        value={currentRole.title}
+                        onChange={(e) => {
+                            e.preventDefault()
+                            setCurrentRole({
+                                ...currentRole,
+                                title: e.target.value
+                            })
+                        }} />
 
-                <label>Projects:</label>
-                <input
-                    type="text"
-                    id="projects"
-                    name="projects"
-                    value={currentProject}
-                    onChange={(e) => {
-                        e.preventDefault()
-                        setCurrentProject(e.target.value)
-                    }} />
+                    <div>Projects:</div>
+                    <input
+                        type="text"
+                        id="projects"
+                        name="projects"
+                        value={currentProject}
+                        onChange={(e) => {
+                            e.preventDefault()
+                            setCurrentProject(e.target.value)
+                        }} />
+                </div>
+                <button className="project-submit-button" onClick={updateProjects}>Enter Project</button>
             </div>
-             <button className="project-submit-button" onClick={updateProjects}>Enter Project</button>
-            </div>
-            {employment.roles.map((role, index) => {
-                return <RoleEntry
+            <button className="project-submit-button" onClick={addRole}>Add Role</button>
+            {employment.roles.map((role, index) =>
+                <RoleEntry
                     role={role}
                     index={index}
                     editing={index === editID}
                     updateRole={updateRole}
                     deleteRole={deleteRole}
                     setEdit={setEditID} />
-            })}
+            )}
 
         </>)
 
