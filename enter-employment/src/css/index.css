@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: #f5f7fb;
+  color: #111827;
+}
+
+button {
+  width: fit-content;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background: #e0e5ee;
+  color: rgb(51, 47, 47);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #b8b8c0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+form {
+  display: grid;
+  gap: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.enter-employment {
+  max-width: 800px;
+  margin: 32px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.08);
+}
+
+.submit-form {
+  display: grid;
+  grid-template-columns: auto auto ;
+  gap: 30px;
+}
+
+.role-entry {
+  display: flex;
+  align-items: center;
+}
+
+.square-button {
+  border-radius: none;
+  background: #ffffff;
+  color: rgb(61, 58, 58);
+  padding: 12px 12px;
+}
+.square-button:hover {
+  background: #f0efef;
+}
+
+.role-button {
+  border-radius: none;
+  background: #ffffff;
+  padding: 12px 4px 12px 10px;
+  color: rgb(61, 58, 58);
+}
+
+.role-button:hover {
+  background: #ffffff;
+}
+
+header {
+  margin-bottom: 24px;
+}
+

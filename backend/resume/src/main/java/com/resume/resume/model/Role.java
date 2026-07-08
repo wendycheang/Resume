@@ -1,7 +1,6 @@
 package com.resume.resume.model;
 
 import java.util.List;
-
 import org.springframework.data.annotation.Id;
 
 public class Role {
@@ -70,5 +69,5 @@ public class Role {
     public String toString() {
         return "Role [id=" + id + ", title=" + title + ", projects=" + projects + "]";
     }
-    
+
 }

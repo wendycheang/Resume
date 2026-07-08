@@ -12,6 +12,6 @@ import com.resume.resume.model.Project;
 public interface ProjectRepository extends MongoRepository<Project, String>{
 
     List<Project> findAll();
-    
+
     public long count();
 }

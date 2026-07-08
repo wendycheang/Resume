@@ -9,8 +9,10 @@ import com.resume.resume.model.Skill;
 
 @Repository
 public interface SkillRepository extends MongoRepository<Skill, String>{
-    
+
     List<Skill> findAll();
-    
+
+    Skill save(Skill skill);
+
     public long count();
 }

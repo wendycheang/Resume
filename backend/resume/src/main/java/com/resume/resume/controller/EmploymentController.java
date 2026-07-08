@@ -3,7 +3,9 @@ package com.resume.resume.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.resume.resume.model.Employment;
 import com.resume.resume.repository.EmploymentRepository;
@@ -15,6 +17,12 @@ public class EmploymentController {
 
     public EmploymentController(EmploymentRepository repository) {
         this.repository = repository;
+    }
+
+    @PostMapping("/employment")
+    public Employment addStudent(@RequestBody Employment employment) {
+        console.log(employment)
+        return repository.save(employment);
     }
 
     // Aggregate root
