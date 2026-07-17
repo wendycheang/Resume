@@ -1,16 +1,22 @@
 import RoleEntry from './RoleEntry'
-import { useState, Fragment } from 'react'
+import { useState } from 'react'
 import './css/RoleSection.css'
+import type { Employment, Role } from './types'
 
-const RoleSection = ({ employment, setEmployment }) => {
+interface RoleSectionProps {
+    employment: Employment
+    setEmployment: React.Dispatch<React.SetStateAction<Employment>>
+}
 
-    const [currentRole, setCurrentRole] = useState({
+const RoleSection = ({ employment, setEmployment }: RoleSectionProps) => {
+
+    const [currentRole, setCurrentRole] = useState<Role>({
         title: "",
         projects: [],
     })
     const [currentProject, setCurrentProject] = useState("")
 
-    const updateProjects = (e) => {
+    const updateProjects = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
 
         setCurrentRole({
@@ -20,7 +26,7 @@ const RoleSection = ({ employment, setEmployment }) => {
         setCurrentProject("")
     }
 
-    const addRole = (e, entry) => {
+    const addRole = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
         setEmployment({
             ...employment,
@@ -29,30 +35,30 @@ const RoleSection = ({ employment, setEmployment }) => {
     }
 
 
-    const deleteRole = (index) => {
+    const deleteRole = (index: number) => {
         setEmployment({
             ...employment,
             roles: employment.roles.filter((_, i) => i !== index)
         })
     }
 
-    const editRole = (newValue, currentIndex) => {
+    const editRole = (newValue: Role, currentIndex: number) => {
         setEmployment({
             ...employment,
             roles: employment.roles.map((value, index) => index === currentIndex ? newValue : value)
         })
     }
 
-    const updateRole = (e, index) => setEmployment({
+    const updateRole = (e: React.ChangeEvent<HTMLInputElement>, index: number) => setEmployment({
         ...employment,
         roles: employment.roles.map((r, i) => {
-            return i === index ? e.target.value : r
+            return i === index ? { ...r, title: e.target.value } : r
         })
     })
 
     return (
         <>
-            <div htmlFor="roles">Roles:</div>
+            <div>Roles:</div>
             <div></div>
             <div>
                 <div className="role-section">
@@ -63,7 +69,6 @@ const RoleSection = ({ employment, setEmployment }) => {
                         name="role-title"
                         value={currentRole.title}
                         onChange={(e) => {
-                            e.preventDefault()
                             setCurrentRole({
                                 ...currentRole,
                                 title: e.target.value
@@ -77,23 +82,12 @@ const RoleSection = ({ employment, setEmployment }) => {
                         name="projects"
                         value={currentProject}
                         onChange={(e) => {
-                            e.preventDefault()
                             setCurrentProject(e.target.value)
                         }} />
                 </div>
                 <button className="project-submit-button" onClick={updateProjects}>Enter Project</button>
             </div>
             <button className="project-submit-button" onClick={addRole}>Add Role</button>
-            {employment.roles.map((role, index) =>
-                <RoleEntry
-                    role={role}
-                    index={index}
-                    editing={index === editID}
-                    updateRole={updateRole}
-                    deleteRole={deleteRole}
-                    setEdit={setEditID} />
-            )}
-
         </>)
 
 }

@@ -1,7 +1,13 @@
 import { Fragment } from 'react'
 import './css/RoleEntry.css'
+import type { Role } from './types'
 
-const RoleEntry = ({ role, index }) => {
+interface RoleEntryProps {
+    role: Role
+    index: number
+}
+
+const RoleEntry = ({ role, index }: RoleEntryProps) => {
 
 
     return (<Fragment key={`role-${index}`}>
@@ -10,7 +16,7 @@ const RoleEntry = ({ role, index }) => {
               {role.title}
               <div className='project-section'>
                 {role.projects.map((project, pindex) => {
-                  console.log(role.projects)
+                  console.log(role)
                   return (
                     <div key={`project-${index}-${pindex}`}>
                       {project}
