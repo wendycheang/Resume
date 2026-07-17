@@ -21,7 +21,6 @@ public class EmploymentController {
 
     @PostMapping("/employment")
     public Employment addStudent(@RequestBody Employment employment) {
-        console.log(employment)
         return repository.save(employment);
     }
 

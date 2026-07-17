@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import './css/RoleEntry.css'
 
-const RoleEntry = ({ role, index, editing, updateRole, setEdit, deleteRole}) => {
+const RoleEntry = ({ role, index }) => {
 
 
     return (<Fragment key={`role-${index}`}>

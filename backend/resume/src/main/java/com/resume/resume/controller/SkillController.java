@@ -3,6 +3,8 @@ package com.resume.resume.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.resume.resume.model.Skill;
@@ -15,6 +17,11 @@ public class SkillController {
 
     public SkillController(SkillRepository repository) {
         this.repository = repository;
+    }
+
+    @PostMapping("/skill")
+    public Skill addSkill(@RequestBody Skill skill) {
+        return repository.save(skill);
     }
 
     // Aggregate root

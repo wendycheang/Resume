@@ -4,8 +4,6 @@ import './css/RoleSection.css'
 
 const RoleSection = ({ employment, setEmployment }) => {
 
-    const [editID, setEditID] = useState(-1)
-
     const [currentRole, setCurrentRole] = useState({
         title: "",
         projects: [],
@@ -28,8 +26,6 @@ const RoleSection = ({ employment, setEmployment }) => {
             ...employment,
             roles: [...employment.roles, currentRole]
         })
-    //    setEntry("")
-   //     setEdit(-1)
     }
 
 

@@ -3,6 +3,8 @@ package com.resume.resume.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.resume.resume.model.Project;
@@ -17,6 +19,10 @@ public class ProjectController {
         this.repository = repository;
     }
 
+    @PostMapping("/project")
+    public Project addProject(@RequestBody Project project) {
+        return repository.save(project);
+    }
     // Aggregate root
     // tag::get-aggregate-root[]
     @GetMapping("/projects")
