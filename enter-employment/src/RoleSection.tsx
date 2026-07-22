@@ -2,18 +2,25 @@ import RoleEntry from './RoleEntry'
 import { useState } from 'react'
 import './css/RoleSection.css'
 import type { Employment, Role } from './types'
+import { useSelector, useDispatch } from 'react-redux'
+import type { RootState } from './store/EmploymentStore'
+import { addRole } from './store/EmploymentSlice'
 
 interface RoleSectionProps {
     employment: Employment
     setEmployment: React.Dispatch<React.SetStateAction<Employment>>
 }
 
-const RoleSection = ({ employment, setEmployment }: RoleSectionProps) => {
+const RoleSection = () => {
+
+    const employment = useSelector((state: RootState) => state.employment)
+    const dispatch = useDispatch()
 
     const [currentRole, setCurrentRole] = useState<Role>({
         title: "",
         projects: [],
     })
+
     const [currentProject, setCurrentProject] = useState("")
 
     const updateProjects = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -26,35 +33,33 @@ const RoleSection = ({ employment, setEmployment }: RoleSectionProps) => {
         setCurrentProject("")
     }
 
-    const addRole = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const submitRole = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
-        setEmployment({
-            ...employment,
-            roles: [...employment.roles, currentRole]
-        })
+
+        dispatch(addRole(currentRole));
     }
 
 
-    const deleteRole = (index: number) => {
-        setEmployment({
-            ...employment,
-            roles: employment.roles.filter((_, i) => i !== index)
-        })
-    }
+    // const deleteRole = (index: number) => {
+    //     setEmployment({
+    //         ...employment,
+    //         roles: employment.roles.filter((_, i) => i !== index)
+    //     })
+    // }
 
-    const editRole = (newValue: Role, currentIndex: number) => {
-        setEmployment({
-            ...employment,
-            roles: employment.roles.map((value, index) => index === currentIndex ? newValue : value)
-        })
-    }
+    // const editRole = (newValue: Role, currentIndex: number) => {
+    //     setEmployment({
+    //         ...employment,
+    //         roles: employment.roles.map((value, index) => index === currentIndex ? newValue : value)
+    //     })
+    // }
 
-    const updateRole = (e: React.ChangeEvent<HTMLInputElement>, index: number) => setEmployment({
-        ...employment,
-        roles: employment.roles.map((r, i) => {
-            return i === index ? { ...r, title: e.target.value } : r
-        })
-    })
+    // const updateRole = (e: React.ChangeEvent<HTMLInputElement>, index: number) => setEmployment({
+    //     ...employment,
+    //     roles: employment.roles.map((r, i) => {
+    //         return i === index ? { ...r, title: e.target.value } : r
+    //     })
+    // })
 
     return (
         <>
@@ -87,7 +92,7 @@ const RoleSection = ({ employment, setEmployment }: RoleSectionProps) => {
                 </div>
                 <button className="project-submit-button" onClick={updateProjects}>Enter Project</button>
             </div>
-            <button className="project-submit-button" onClick={addRole}>Add Role</button>
+            <button className="project-submit-button" onClick={submitRole}>Add Role</button>
         </>)
 
 }
